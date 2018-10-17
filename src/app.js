@@ -6,11 +6,11 @@ const SelectView = require("./views/select_view.js");
 document.addEventListener('DOMContentLoaded', () => {
 
 // step3
-const selectElement = document.querySelector('#instrument-families')
+
 const instrumentDropDown = new SelectView(selectElement);
 // console.log(instrumentDropDown);
-instrumentDropDown.bindEvents
-
+instrumentDropDown.bindEvents()
+const selectElement = document.querySelector('#instrument-families')
 
 
 

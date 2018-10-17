@@ -7,13 +7,13 @@ const InstrumentFamilies = function(data) {
 
 // step4 - publish the data received from instrument_data
 InstrumentFamilies.prototype.bindEvents = function () {
-  PubSub.publish('InstrumentFamilies:all-instruments-ready', this.instrumentFamilies);
+  PubSub.publish('InstrumentFamilies:all-instruments-ready', this.data);
 
   // step9
-  // PubSub.subscribe('SelectView:index of instrument selected', (event) => {
-  //   const selectedIndex = eventt.detail;
-  //   this.publishInstrumentDetail(selectedIndex);
-  // });
+  PubSub.subscribe('SelectView:index of instrument selected', (event) => {
+    const selectedIndex = event.detail;
+    this.publishInstrumentDetail(selectedIndex);
+  });
 
 };
 
